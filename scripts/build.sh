@@ -2,4 +2,4 @@
 set -e # halt script on error
 
 echo Building...
-echo Hello Johnny
+echo Hello Johnnyecho Hello Johnny!
