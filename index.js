@@ -19,11 +19,10 @@ var server = http.createServer(function(req, resp) {
   if(!rgb) {
     resp.end('No board!');
   }
-
+console.log(req.url);
   var url = req.url.toLowerCase();
   if (url.indexOf("/events/build/started") == 0) {
     rgb.color("#FFFF00");
-    rgb.strobe(500);
     resp.end("Build Started");
   } else if (url.indexOf("/events/build/success") == 0) {
     rgb.color("#00ff00");
@@ -32,7 +31,7 @@ var server = http.createServer(function(req, resp) {
     rgb.color("#ff0000");
     resp.end("Build Failed");
   } else {
-    rgb.color("#ffffff");
+    //rgb.color("#ffffff");
     resp.end("Unknown event");
   }
 }).listen(8000);
